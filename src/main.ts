@@ -4,7 +4,7 @@ import execa from 'execa'
 const isSupportedExtension = (fileName: string): boolean => Boolean(fileName.match(/\.tsx?/))
 
 const findWhereCommitForkedFromMaster = async (): Promise<string> => {
-  const { stdout } = await execa('git', ['merge-base', '--fork-point', 'master'])
+  const { stdout } = await execa('git', ['merge-base', '--fork-point', 'develop'])
   return stdout
 }
 
